@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> CHURN </title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
+</head>
+
+
+<body class="salem">
+
+    <form action="{{ url_for('predict')}}"method="post">
+
+    <h1>Averigua si un cliente dejará de pagar su suscripción</h1>
+
+    <main>
+    
+    <div class="left-column">
+        <div>
+                <ul>
+                    <li >
+                        <p> <h2 class="score">Score crediticio</h2> </p> 
+                        <p> <input type="text" name="CreditScore" placeholder="Ingrese el score crediticio del cliente" required="required" class="year" style="width:330px; height:30px;font-size:20px;" /> </p>
+                    </li>
+                    <br>
+
+                    <li>
+                        <p> <h2 class="age">Edad</h2> </p> 
+                        <p> <input type="text" name="Age" placeholder="Ingrese la edad del cliente" required="required" class="year" style="width:240px; height:30px;font-size:20px;" /> </p>
+                    </li>
+                    <br>
+                    <li>
+                        <p> <h2 class="tenure">Tiempo de permanencia</h2> </p> 
+                        <p> <input type="text" name="Tenure" placeholder="Años que el cliente ha mantenido su suscripción " required="required" class="year" style="width:435px; height:30px;font-size:20px;" /> </p>
+                    </li>
+                    <br>
+                    <li >
+                        <p> <h2 class="año">Balance</h2> </p> 
+                        <p> <input type="text" name="Balance" placeholder="Ingrese el balance económico del cliente" required="required" class="year" style="width:370px; height:30px;font-size:20px;" /> </p>
+                    </li>
+            </ul>
+        </div>
+    </div>
+        
+
+    <div class="center-column">
+        <div>
+            <ul>
+                <li>
+                    <p> <h2 class="NumOfProducts">Número de productos</h2> </p> 
+                    <p> <input type="text" name="NumOfProducts" placeholder="Ingrese el número de productos del cliente" required="required" class="year" style="width:385px; height:30px;font-size:20px;" /> </p>
+                </li>
+                <br>
+                <li >
+                    <p><h2 class="HasCrCard">¿Tiene tarjeta de crédito?</h2></p>    
+                 
+                        <select name="HasCrCard" style="width:60px; height:30px;font-size:20px;">
+                            <option value="1">Si </option>
+                            <option value="0">No</option>
+                        </select>
+                    
+                </li>
+                <br>
+                <li>
+                    <p> <h2 class="IsActiveMember">¿Es un miembro activo?</h2> </p>
+                    
+                        <select name="IsActiveMember" style="width:60px; height:30px;font-size:20px;">
+                            <option value="1">Si </option>
+                            <option value="0">No</option>
+                        </select>
+                    
+                </li>
+                <br>
+                <li >
+                    <p> <h2 class="EstimatedSalary">Salario estimado</h2> </p> 
+                    <p> <input type="text" name="EstimatedSalary" placeholder="Ingrese el salario estimado del cliente" required="required" class="year" style="width:340px; height:30px;font-size:20px;" /> </p>
+                </li>
+         
+            </ul>
+        </div>
+    </div>
+
+    <div class="right-column">
+        <div>
+            <ul>
+                <br>
+                <li>
+                    <p> <h2 class="Origin">País de origen</h2> </p>
+                    <form action="">
+                        <select name="Origin" style="width:110px; height:30px;font-size:20px;">
+                            <option value="France">Francia </option>
+                            <option value="Germany">Alemania</option>
+                            <option value="Spain">España</option>
+                        </select>
+                    </form>
+                </li>
+                <br>
+                
+                <li>
+                    <p> <h2 class="Sex">Sexo</h2> </p>
+                        <select name="Sexo" style="width:120px; height:30px;font-size:20px;">
+                            <option value="Female">Femenino </option>
+                            <option value="Male">Masculino</option>
+                        </select>  
+                </li>
+                <br>
+                <br>
+                <li>
+                    <button type="submit" class= "boton" style="width:150px; height:50px;font-size:30px;border-radius:5px;-moz-border-radius:3px;">Predecir</button>
+                </li>
+                <br>
+            </ul>
+        </div>
+    </div>
+</main>
+
+<div class="prediccion">
+    <p> <h3> Predicción: {{prediction_text}} </h3></p>
+</div>
+</body>
+
+</html>

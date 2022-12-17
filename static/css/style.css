@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+    background-color: #000000;
+	background-image: linear-gradient(rgba(0.1, 0.1, 0.1, 0.6), rgba(0.1, 0.2, 0.8, 0.1)),url("1.jpg");
+    color: #ffffff;
+    background-position: center;
+	background-size: cover;
+    text-align: center;
+}
+
+
+
+h1{
+    font-size: 5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 5rem 0 0rem 0;
+    text-align: center;
+    color:white;
+}
+
+
+main{
+    columns: 3;
+    font-size: 2rem;
+    color: rgba(248, 243, 248, 0.946);
+    padding: 8rem 3rem 8rem 3rem;
+}
+
+main li{
+    list-style: none;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+}
+
+.left-column{
+    padding-left: 1rem;
+}
+
+.center-column{
+    padding-left: 3rem;
+    padding-right: 4rem;
+    margin-right: 3rem;
+}
+
+.right-column{
+    padding-left: 4rem;
+    margin-left: 2rem;
+}
+
+.prediccion{
+    font-size: 3rem;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 18rem;
+}
